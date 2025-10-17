@@ -1,5 +1,19 @@
 # MetaPixelService
 
+
+Requisitos Previos y Configuración
+Para que el servicio funcione correctamente, el script base del Meta Pixel debe estar insertado en el archivo index.html de tu aplicación Angular, idealmente en la etiqueta <head>.
+
+HTML
+
+    <!-- Ejemplo de Script de Meta Pixel en index.html -->
+    <script>
+    !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod?    n.callMethod.apply(n,arguments):n.queue.push(arguments)};  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';  n.queue=[];t=b.createElement(e);t.async=!0;  t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script',        '[https://connect.facebook.net/en_US/fbevents.js](https://connect.facebook.net/en_US/fbevents.js)');    fbq('init', 'TU_ID_DEL_PIXEL_AQUÍ');    // NO LLAMAMOS PageView aquí. El servicio lo gestiona automáticamente en la SPA.
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="[https://www.facebook.com/tr?id=TU_ID_DEL_PIXEL_AQUÍ&ev=PageView&noscript=1](https://www.facebook.com/tr?id=TU_ID_DEL_PIXEL_AQUÍ&ev=PageView&noscript=1)"
+    /></noscript>
+
 Informe de Servicio: MetaPixelService
 
 Este documento describe el servicio unificado MetaPixelService, diseñado para centralizar y estandarizar el rastreo de eventos de Meta Pixel (Facebook Ads) en todas las aplicaciones Angular de Lidertech, en línea con la metodología CiclicModelLider.
